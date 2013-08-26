@@ -1,0 +1,16 @@
+body {
+    background-image: url('../images/patterns/pattern2.png');
+}
+
+a.dark, a.dark:visited {
+    color: #6F6F6F;
+}
+
+a.dark:hover {
+    color: #6F6F6F;
+    text-decoration: underline;
+}
+
+.icons {
+    width: 110px;
+}

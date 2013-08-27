@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,59 +9,59 @@
 
   <link href="jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
   <link href="jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <link rel="stylesheet" href="stylesheets/custom-style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/custom-style.css" />
 
-  <script src="javascripts/jquery.js"></script>
+  <script src="js/jquery.js"></script>
   <script type="text/javascript" src="jackbox/js/libs/jquery.address-1.5.min.js"></script>
   <script type="text/javascript" src="jackbox/js/libs/Jacked.js"></script>
   <script type="text/javascript" src="jackbox/js/jackbox-swipe.js"></script>
   <script type="text/javascript" src="jackbox/js/jackbox.js"></script>
   <script type="text/javascript" src="jackbox/js/libs/StackBlur.js"></script>
-  <script src="javascripts/scripts.js"></script>
-  <script src="javascripts/custom-scripts.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/custom-scripts.js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
   <script>
-		var map;
-		var provo = new google.maps.LatLng(40.23384, -111.65853);
-		var MY_MAPTYPE_ID = 'hiphop';
-		function initialize() {
-			var stylez = [
-				{
-					"stylers": [
-						{ "saturation": -97 }
-					]
-				},{
-				}
-			]
-			var mapOptions = {
-				zoom: 12,
-				center: provo,
-				mapTypeControlOptions: {
-					mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
-				},
-				mapTypeId: MY_MAPTYPE_ID
-			};
-			map = new google.maps.Map(document.getElementById('map_canvas'),
-					mapOptions);
-			var styledMapOptions = {
-				name: 'Gray Scale'
-			};
-			var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
-			map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
-		}
+    var map;
+    var provo = new google.maps.LatLng(40.23384, -111.65853);
+    var MY_MAPTYPE_ID = 'hiphop';
+    function initialize() {
+      var stylez = [
+        {
+          "stylers": [
+            { "saturation": -97 }
+          ]
+        },{
+        }
+      ]
+      var mapOptions = {
+        zoom: 12,
+        center: provo,
+        mapTypeControlOptions: {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+        },
+        mapTypeId: MY_MAPTYPE_ID
+      };
+      map = new google.maps.Map(document.getElementById('map_canvas'),
+          mapOptions);
+      var styledMapOptions = {
+        name: 'Gray Scale'
+      };
+      var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
+      map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
+    }
     </script>
   <!--[if lt IE 9]>
-  	<script type="text/javascript" src="javascripts/html5.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/ie.css">
+    <script type="text/javascript" src="js/html5.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
   <![endif]-->
-	<!--[if lt IE 8]>
-		<div style=' clear: both; text-align:center; position: relative;'>
+  <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
        <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
     </a>
   </div>
-	<![endif]-->
+  <![endif]-->
 </head>
 <body onload="initialize()">
 <div id="main_bg">
@@ -362,7 +363,7 @@
                                 </div>
                             <div class="clear"></div>
                           </div>
-												</div>
+                        </div>
                         </article>
                       </div>
                     </li>
@@ -374,28 +375,28 @@
                               <div class="pad_box1">
                                 <h2 class="ind1">My Professional Skills</h2>
                                                                 <div class="skill_box">
-																	<div class="skill_label">HTML and CSS<span class="skill_num">9/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="90"></div></div>
-																</div>
-																<div class="skill_box">
-																	<div class="skill_label">JavaScript and jQuery<span class="skill_num">9/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="90"></div></div>
-																</div>
-																<div class="skill_box">
-																	<div class="skill_label">PHP<span class="skill_num">10/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="100"></div></div>
-																</div>
-																<div class="skill_box">
-																	<div class="skill_label">Ruby on Rails<span class="skill_num">7/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="70"></div></div>
-																</div>
-																<div class="skill_box">
-																	<div class="skill_label">C# and ASP with .NET<span class="skill_num">7/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="70"></div></div>
-																</div>
-																<div class="skill_box">
-																	<div class="skill_label">Mobile Apps<span class="skill_num">6/10</span></div>
-																	<div class="skill_level"><div class="skill_set" data-skill="60"></div></div>
+                                  <div class="skill_label">HTML and CSS<span class="skill_num">9/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="90"></div></div>
+                                </div>
+                                <div class="skill_box">
+                                  <div class="skill_label">JavaScript and jQuery<span class="skill_num">9/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="90"></div></div>
+                                </div>
+                                <div class="skill_box">
+                                  <div class="skill_label">PHP<span class="skill_num">10/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="100"></div></div>
+                                </div>
+                                <div class="skill_box">
+                                  <div class="skill_label">Ruby on Rails<span class="skill_num">7/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="70"></div></div>
+                                </div>
+                                <div class="skill_box">
+                                  <div class="skill_label">C# and ASP with .NET<span class="skill_num">7/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="70"></div></div>
+                                </div>
+                                <div class="skill_box">
+                                  <div class="skill_label">Mobile Apps<span class="skill_num">6/10</span></div>
+                                  <div class="skill_level"><div class="skill_set" data-skill="60"></div></div>
                                                                 </div>
                                                                 <div class="skill_box last">
                                                                     <div class="skill_label">Photoshop<span class="skill_num">10/10</span></div>
@@ -403,8 +404,8 @@
                                                                 </div>
                               </div>
                             </article>
-														<article class="grid_3">
-															<div class="pad_box1">
+                            <article class="grid_3">
+                              <div class="pad_box1">
                                 <h2 class="ind1">Main Services</h2>
                                 <ul class="service_list">
                                   <li>
@@ -421,7 +422,7 @@
                                   </li>-->
                                 </ul>
                               </div>
-														</article>
+                            </article>
                             <article class="grid_5 omega">
                               <div class="pad_box2">
                                 <h2 class="ind">Clients References</h2>
@@ -559,17 +560,17 @@ $(window).load(function() {
   $("#show_icons").click(function(){
     $(".icons, .icons a").toggle('slow');
    })
-	$('.spinner').fadeOut();
-	$('body').css({overflow:'auto', 'min-height':'820px'});
+  $('.spinner').fadeOut();
+  $('body').css({overflow:'auto', 'min-height':'820px'});
   //$('#contact-form').forms()
-	$('.skill_set').each(function() {
-		var skill = $(this);
-		var skill_width = $(this).attr('data-skill');
-	 // skill.css('width', skill_width+'%');
-		skill.animate({
-				width: skill_width+'%'
-		},1000);
-	});
+  $('.skill_set').each(function() {
+    var skill = $(this);
+    var skill_width = $(this).attr('data-skill');
+   // skill.css('width', skill_width+'%');
+    skill.animate({
+        width: skill_width+'%'
+    },1000);
+  });
   $(function(){
     var li=$('.tweet_list li')
      ,n=0

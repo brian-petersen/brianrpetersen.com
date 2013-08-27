@@ -1,0 +1,518 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title Brian R Petersen - Programmer and Designer
+    %meta{ charset: 'utf-8' }
+
+    %link{ rel: 'icon', type: 'image/png', href: 'images/favicon.png' }
+
+    %link{ href: 'jackbox/css/jackbox.css', rel: 'stylesheet', type: 'text/css' }
+    %link{ href: 'jackbox/css/jackbox_hovers.css', rel: 'stylesheet', type: 'text/css' }
+
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+
+    %script{ src: 'http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' }
+
+    :javascript
+      var map;
+      var provo = new google.maps.LatLng(40.23384, -111.65853);
+      var MY_MAPTYPE_ID = 'hiphop';
+
+      function initialize() {
+        var stylez = [
+          {
+            "stylers": [
+              { "saturation": -97 }
+            ]
+          },{
+          }
+        ]
+        var mapOptions = {
+          zoom: 12,
+          center: provo,
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+          },
+          mapTypeId: MY_MAPTYPE_ID
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            mapOptions);
+        var styledMapOptions = {
+          name: 'Gray Scale'
+        };
+        var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
+        map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
+      }
+
+    /[if lt IE 9]
+      = javascript_include_tag :html5
+      = stylesheet_link_tag :ie
+    /[if lt IE 8]
+      %div{ style: 'clear: both; text-align: center; position: relative' }
+        %a{ href: 'http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode' }
+          %img{ src: 'http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg',  border: 0, height: 42, width: 820, alt: 'You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' }
+  %body{ onload: 'initialize()' }
+    #main_bg
+      .glow
+      .spinner
+        %span
+
+      .main_container
+        .container_12
+          %header
+            .grid_12
+              %h1
+                %a#logo.hide_text{ href: '#!/splash' } Brian Petersen
+              .menuHolder
+                %nav.menu
+                  %ul#menu
+                    %li
+                      %a{ href: '#!/splash' }
+                        .mText splash
+                    %li.about_link
+                      %a{ href: '#!/about' }
+                        %em
+                        %span About
+                    %li.port_link
+                      %a{ href: '#!/portfolio' }
+                        %em
+                        %span Portfolio
+                    %li.service_link
+                      %a{ href: '#!/services' }
+                        %em
+                        %span Services
+                    %li.contact_link
+                      %a{ href: '#!/contacts' }
+                        %em
+                        %span Contact
+              .description
+                .inner Hi there! I'm a freelance developer and designer and I love to create cool stuff. Feel free to see my portfolio and thanks for visiting my website.
+              .clear
+            .clear
+
+          %nav.splashHolder
+            %ul.splash_menu
+              %li.grid_3
+                %a{ href: '#!/about' }
+                  %em.menu_icon
+                    %img{ src: 'images/splash_icon1.png' }
+                  %span About
+              %li.grid_3
+                %a{ href: '#!/portfolio' }
+                  %em.menu_icon
+                    %img{ src: 'images/splash_icon2.png' }
+                  %span Portfolio
+              %li.grid_3
+                %a{ href: '#!/services' }
+                  %em.menu_icon
+                    %img{ src: 'images/splash_icon3.png' }
+                  %span Services
+              %li.grid_3.last-col
+                %a{ href: '#!/contacts' }
+                  %em.menu_icon
+                    %img{ src: 'images/splash_icon4.png' }
+                  %span Contact
+
+          %section#content
+            %ul
+              %li#splash
+              %li#about
+                .wrapper
+                  %article.grid_12
+                    .box
+                      .grid_7.alpha
+                        .pad_box1
+                          .biography
+                            .flexslider
+                              %ul.slides
+                                %li
+                                  %img{:alt => "", :src => "images/me1.jpg"}/
+                                %li
+                                  %img{:alt => "", :src => "images/me2.jpg"}/
+                            .text
+                              %ul.date_list
+                                %li
+                                  %strong Date of birth
+                                  %br
+                                    August, 1995 (17 years old)
+                                %li
+                                  %strong Education
+                                  %br
+                                    Associates degree
+                                    %br
+                                      Utah Valley University
+                                      %br
+                                        April 2013
+                                %li
+                                  %strong Specialization
+                                  %br
+                                    Software and app developement,
+                                    %br
+                                      graphic design,
+                                      %br
+                                        and media production
+                                /
+                                  <li class="last">
+                                  <p class="p2"><strong>Awards</strong><br> Site of the day <br>
+                                  (<a href="#">awwwards.com</a>)</p>
+                                  Website winner<br>
+                                  (<a href="#">cssdesignawards.com</a>)
+                                  </li>
+                      .grid_5.omega.last-col
+                        .pad_box2
+                          %h2 Who I Am
+                          %p
+                            I am a 17 year old developer who loves to learn and continually develop my skills. I started building websites when I was about 8 when my dad started to teach me basic HTML and CSS and ever since then I have loved it and began working with various groups of people. My interest in programming and web development has become somewhat of a hobby and I currently work with my parents who are both programmers and who own a website and software development company called
+                            = succeed "." do
+                              %a.dark{:alt => "Petesoft", :href => "http://petesoft.com"} PeteSoft
+                      .clear
+              %li#portfolio
+                .wrapper
+                  %article.grid_12
+                    .box
+                      .pad_box1
+                        %h2.ind Portfolio
+                        .filter_box
+                          .portfolio-filter
+                            %ul#portfolio-filter
+                              %li
+                                %a{:href => "#"} Filter
+                                %ul
+                                  %li
+                                    %a{:href => "#all", :title => ""} All
+                                  %li
+                                    %a{:href => "#web", :rel => "web", :title => ""} Web
+                                  %li
+                                    %a{:href => "#js", :rel => "js", :title => ""} JavaScript
+                                  %li
+                                    %a{:href => "#php", :rel => "php", :title => ""} PHP
+                                  %li
+                                    %a{:href => "#net", :rel => "net", :title => ""} C# and .NET
+                                  %li
+                                    %a{:href => "#app", :rel => "app", :title => ""} Mobile App
+                          .portfolio-item
+                            %ul#portfolio-list
+                              %li.web.php.js
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Science Fair Movie Selection from Database", :href => "images/portfolio/sciencefair.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/sciencefair.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Science Fair
+                                            %br
+                                              Movie Selection
+                                              %br
+                                                %span Web, PHP, JavaScript
+                              %li.web.php
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Top Ten Things Everyone Should Know", :href => "images/portfolio/toptenthings.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/toptenthings.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Top Ten Things
+                                            %br
+                                              Everyone Should Know
+                                              %br
+                                                %span Web, PHP
+                              %li.web
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "John 4 Provo - Provo City Council", :href => "images/portfolio/john4provo.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/john4provo.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            John 4 Provo
+                                            %br
+                                              Provo City Council
+                                              %br
+                                                %span Web
+                              %li.web.php.js
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Black Friday Cheat", :href => "images/portfolio/blackfridaycheat.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/blackfridaycheat.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Black Friday Cheat
+                                            %br
+                                              %span Web, PHP, JavaScript
+                              %li.web.php
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Utah Youth Suicide Prevention", :href => "images/portfolio/uysp.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/uysp.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Utah Youth
+                                            %br
+                                              Suicide Prevention
+                                              %br
+                                                %span Web, PHP
+                              %li.web.php.js
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Start Losing Weight Today - WordPress CMS", :href => "images/portfolio/slwt.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/slwt.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Start Losing
+                                            %br
+                                              Weight Today
+                                              %br
+                                                %span Web, PHP, JavaScript
+                              %li.app
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "Max Kohl's Cash - Android Market", :href => "images/portfolio/kohlscash.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/kohlscash.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            Max Kohl's Cash
+                                            %br
+                                              %span Mobile App
+                              %li.php
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "PHP Webscraper", :href => "images/portfolio/webscrapercode.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/webscrapercode.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            PHP Webscraper
+                                            %br
+                                              %span PHP
+                              %li.net
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "AmineS2", :href => "images/portfolio/amines2.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/amines2.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            AmineS2
+                                            %br
+                                              Chemistry Calculations
+                                              %br
+                                                %span C# and .NET
+                              %li.net
+                                .portfolio-box
+                                  .portoflio-img
+                                    %a.jackbox{"data-group" => "images", "data-title" => "XML Language Parser", :href => "images/portfolio/xmlparser.jpg"}
+                                      %img{:alt => "", :src => "images/portfolio/thumbnail/xmlparser.jpg"}
+                                        %span.description
+                                          %span.inner
+                                            XML Language
+                                            %br
+                                              Parser
+                                              %br
+                                                %span C# and .NET
+                        .clear
+              %li#services
+                .wrapper
+                  %article.grid_12
+                    .box
+                      %article.grid_4.alpha
+                        .pad_box1
+                          %h2.ind1 My Professional Skills
+                          .skill_box
+                            .skill_label
+                              HTML and CSS
+                              %span.skill_num 9/10
+                            .skill_level
+                              .skill_set{"data-skill" => "90"}
+                          .skill_box
+                            .skill_label
+                              JavaScript and jQuery
+                              %span.skill_num 9/10
+                            .skill_level
+                              .skill_set{"data-skill" => "90"}
+                          .skill_box
+                            .skill_label
+                              PHP
+                              %span.skill_num 10/10
+                            .skill_level
+                              .skill_set{"data-skill" => "100"}
+                          .skill_box
+                            .skill_label
+                              Ruby on Rails
+                              %span.skill_num 7/10
+                            .skill_level
+                              .skill_set{"data-skill" => "70"}
+                          .skill_box
+                            .skill_label
+                              C# and ASP with .NET
+                              %span.skill_num 7/10
+                            .skill_level
+                              .skill_set{"data-skill" => "70"}
+                          .skill_box
+                            .skill_label
+                              Mobile Apps
+                              %span.skill_num 6/10
+                            .skill_level
+                              .skill_set{"data-skill" => "60"}
+                          .skill_box.last
+                            .skill_label
+                              Photoshop
+                              %span.skill_num 10/10
+                            .skill_level
+                              .skill_set{"data-skill" => "100"}
+                      %article.grid_3
+                        .pad_box1
+                          %h2.ind1 Main Services
+                          %ul.service_list
+                            %li
+                              %h3 Websites
+                              I have also created several websites with HTML, CSS and JavaScript technologies.
+                              %a.dark{:href => "http://john4provo.com", :target => "_blank"} John 4 Provo
+                              is a good example of a static website that I have created with the previously mentioned technologies.
+                            %li.last
+                              %h3 Software Development
+                              I have created many different kinds of software solutions. The projects range from desktop applications to web applications in a variety of programming languages including C#, Ruby, PHP, Ruby on Rails, and ASP MVC .NET.
+                            /
+                              <li class="last">
+                              <h3>Design</h3>
+                              I have created website designs as well as
+                              </li>
+                      %article.grid_5.omega
+                        .pad_box2
+                          %h2.ind Clients References
+                          %ul.reference_list
+                            %li.last
+                              %blockquote
+                                "Brian Petersen created a website for my political campaign. The website looked very professional and was done for a fraction of what I was quoted by other places. Communication was great and I would recommend Brian to anyone looking to have a website built for them."
+                              .author
+                                %a.dark{:href => "http://john4provo.com", :target => "_blank"} John Breeding
+                                \- Provo City Council Candidate
+                      .clear
+              %li#contacts
+                .wrapper
+                  %article.grid_12
+                    .box
+                      /
+                        <div class="grid_4 alpha">
+                        <div class="pad_box1">
+                        <h2 class="ind">Get In Touch</h2>
+                        <form id="contact-form">
+                        <div class="success">Contact form submitted!<br>
+                        <strong>We will be in touch soon.</strong>
+                        </div>
+                        <fieldset>
+                        <label class="name">
+                        <input type="text" value="Your Name*">
+                        <span class="error">*This is not a valid name.</span> <span class="empty">*This field is required.</span>
+                        </label>
+                        <label class="email">
+                        <input type="text" value="Email*">
+                        <span class="error">*This is not a valid email address.</span> <span class="empty">*This field is required.</span>
+                        </label>
+                        <label class="message notRequired">
+                        <textarea>Message</textarea>
+                        <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span>
+                        </label>
+                        <div class="buttons2">
+                        <a href="#" id="contact-button" data-type="submit" class="button">Send Your Message</a>
+                        </div>
+                        </fieldset>
+                        </form>
+                        </div>
+                        </div>
+                      .grid_12.omega
+                        .pad_box2
+                          .ext_box.map_box
+                            %figure
+                              #map_canvas
+                            %div
+                              %h2 Contact Info
+                              %p.p3.gray1 Feel free to contact me for any reason. I will always reply!
+                              %dl.address
+                                %dd
+                                  %span>
+                                    %img{:alt => "", :src => "images/ico1.png"}/
+                                  +1 801 709 0848
+                                %dd
+                                  %span
+                                    %img{:alt => "", :src => "images/ico2.png"}/
+                                  %a{:href => "mailto:me@brianrpetersen.com"} me@brianrpetersen.com
+                      .clear
+              %li#sample
+                .wrapper.gray1
+                  %article.grid_12
+                    .box.p_bot1
+                      .grid_12.alpha.omega
+                        .pad_box3
+                          %h2 Sample Text Page
+                          %p.p2 Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.
+                          %p.p2 Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante.
+                          Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in,auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+                      .clear
+
+          %footer
+            .splash_footer= "&copy; 2012-#{ Time.now.year } Brian R Petersen. All rights reserved."
+            .footer
+              /
+                <div id="twitter" class="twitter">
+
+                </div>
+              .clear
+              .privacy= "&copy; 2012-#{ Time.now.year } Brian R Petersen. All rights reserved."
+
+              %ul.social
+                %li
+                  %a#show_icons.soc1{:href => "javascript:;", :title => "Network"}
+                    %img{:alt => "", :src => "images/soc1.png"}/
+                  .icons
+                    %a{:href => "http://www.facebook.com/brpetersen", :title => "Facebook"}
+                      %img{:alt => "", :src => "images/socico1.png"}/
+                    %a{:href => "http://twitter.com/_brianpetersen", :title => "Twitter"}
+                      %img{:alt => "", :src => "images/socico2.png"}/
+                    %a{:href => "http://youtube.com/user/StarlitProductions", :title => "YouTube"}
+                      %img{:alt => "", :src => "images/socico8.png"}/
+                    /
+                      <a href="#" title="Facebook"><img src="images/socico1.png" alt=""></a>
+                      <a href="#" title="Twitter"><img src="images/socico2.png" alt=""></a>
+                      <a href="#" title="Google+"><img src="images/socico3.png" alt=""></a>
+                      <a href="#" title="LinkedIn"><img src="images/socico4.png" alt=""></a>
+                      <a href="#" title="Flickr"><img src="images/socico5.png" alt=""></a>
+                      <a href="#" title="Pinterest"><img src="images/socico6.png" alt=""></a>
+                      <a href="#" title="Vimeo"><img src="images/socico7.png" alt=""></a>
+                      <a href="#" title="YouTube"><img src="images/socico8.png" alt=""></a>
+                      <a href="#" title="Dribble"><img src="images/socico9.png" alt=""></a>
+                /
+                  <li>
+                  <a href="#" title="Download my resume" class="soc2"><img src="images/soc2.png" alt=""></a>
+                  </li>
+              .clear
+
+    :javascript
+      $(window).load(function() {
+        $("#show_icons").click(function(){
+          $(".icons, .icons a").toggle('slow');
+         })
+        $('.spinner').fadeOut();
+        $('body').css({overflow:'auto', 'min-height':'820px'});
+        //$('#contact-form').forms()
+        $('.skill_set').each(function() {
+          var skill = $(this);
+          var skill_width = $(this).attr('data-skill');
+         // skill.css('width', skill_width+'%');
+          skill.animate({
+              width: skill_width+'%'
+          },1000);
+        });
+        $(function(){
+          var li=$('.tweet_list li')
+           ,n=0
+           ,activeClass="active"
+
+          function fu(){
+           li.removeClass(activeClass)
+           li.eq(n++).addClass(activeClass)
+           n=n<li.length?n:0
+           setTimeout(fu,4000)
+          }
+          fu()
+         })
+        jQuery(".jackbox[data-group]").jackBox("init", {deepLinking: false, useThumbs:false});
+        filter_start();
+      })

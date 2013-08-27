@@ -6,6 +6,14 @@ Icon
 # Thumbnails
 ._*
 
+<<<<<<< HEAD
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+=======
+# Ignore .DS_store file
+.DS_Store
+
+# other
+/.idea
+>>>>>>> 045f59a... beginnings

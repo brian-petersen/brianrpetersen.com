@@ -1,6 +1,4 @@
 //= require jquery
-
-// require jackbox
-
+//= require jackbox-js
 //= require scripts
 //= require custom-scripts

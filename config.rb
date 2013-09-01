@@ -77,8 +77,6 @@ file = File.open 'password', 'r'
 password = file.read
 file.close
 
-puts password
-
 activate :deploy do |deploy|
   deploy.method   = :ftp
   deploy.host     = 'brianrpetersen.com'

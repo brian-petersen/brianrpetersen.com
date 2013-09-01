@@ -71,3 +71,18 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+# Deploy configuration
+file = File.open 'password', 'r'
+password = file.read
+file.close
+
+puts password
+
+activate :deploy do |deploy|
+  deploy.method   = :ftp
+  deploy.host     = 'brianrpetersen.com'
+  deploy.user     = 'brianpetersen'
+  deploy.password = password
+  deploy.path     = 'brianrpetersen.com/portfolio'
+end

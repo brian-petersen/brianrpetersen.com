@@ -25,9 +25,10 @@
             "stylers": [
               { "saturation": -97 }
             ]
-          },{
-          }
+          },
+          {}
         ]
+
         var mapOptions = {
           zoom: 12,
           center: provo,
@@ -36,11 +37,13 @@
           },
           mapTypeId: MY_MAPTYPE_ID
         };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            mapOptions);
+
+        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
         var styledMapOptions = {
           name: 'Gray Scale'
         };
+
         var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
         map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
       }
@@ -51,7 +54,7 @@
     /[if lt IE 8]
       %div{ style: 'clear: both; text-align: center; position: relative' }
         %a{ href: 'http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode' }
-          %img{ src: 'http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg',  border: 0, height: 42, width: 820, alt: 'You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' }
+          %img{ src: 'http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg', border: 0, height: 42, width: 820, alt: 'You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' }
   %body{ onload: 'initialize()' }
     #main_bg
       .glow
@@ -162,10 +165,7 @@
                       .grid_5.omega.last-col
                         .pad_box2
                           %h2 Who I Am
-                          %p
-                            I am a 17 year old developer who loves to learn and continually develop my skills. I started building websites when I was about 8 when my dad started to teach me basic HTML and CSS and ever since then I have loved it and began working with various groups of people. My interest in programming and web development has become somewhat of a hobby and I currently work with my parents who are both programmers and who own a website and software development company called
-                            = succeed "." do
-                              %a.dark{:alt => "Petesoft", :href => "http://petesoft.com"} PeteSoft
+                          %p= "I am a 17 year old developer who loves to learn and continually develop my skills. I started building websites when I was about 8 when my dad started to teach me basic HTML and CSS and ever since then I have loved it and began working with various groups of people. My interest in programming and web development has become somewhat of a hobby and I currently work with my parents who are both programmers and who own a website and software development company called #{ link_to 'PeteSoft', 'http://petesoft.com', :class => 'dark', :target => '_blank' }."
                       .clear
               %li#portfolio
                 .wrapper
@@ -369,11 +369,6 @@
                             %li.last
                               %h3 Software Development
                               I have created many different kinds of software solutions. The projects range from desktop applications to web applications in a variety of programming languages including C#, Ruby, PHP, Ruby on Rails, and ASP MVC .NET.
-                            /
-                              <li class="last">
-                              <h3>Design</h3>
-                              I have created website designs as well as
-                              </li>
                       %article.grid_5.omega
                         .pad_box2
                           %h2.ind Clients References
@@ -435,17 +430,17 @@
                                     %img{:alt => "", :src => "images/ico2.png"}/
                                   %a{:href => "mailto:me@brianrpetersen.com"} me@brianrpetersen.com
                       .clear
-              %li#sample
-                .wrapper.gray1
-                  %article.grid_12
-                    .box.p_bot1
-                      .grid_12.alpha.omega
-                        .pad_box3
-                          %h2 Sample Text Page
-                          %p.p2 Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.
-                          %p.p2 Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante.
-                          Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in,auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
-                      .clear
+              / %li#sample
+              /   .wrapper.gray1
+              /     %article.grid_12
+              /       .box.p_bot1
+              /         .grid_12.alpha.omega
+              /           .pad_box3
+              /             %h2 Sample Text Page
+              /             %p.p2 Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.
+              /             %p.p2 Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante.
+              /             Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in,auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+              /         .clear
 
           %footer
             .splash_footer= "&copy; 2012-#{ Time.now.year } Brian R Petersen. All rights reserved."

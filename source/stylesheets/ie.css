@@ -1,0 +1,8 @@
+header{position: relative !important;top: 194px !important;}
+section{top: 173px;margin-bottom: 200px;}
+#portfolio .box{min-height: 546px;}
+.splash_footer{margin-top: 0px;}
+#content>ul{padding-bottom: 150px;}
+#content .box, #menu > li > a, .biography, ul#portfolio-filter > li > a, .skill_set, .skill_level, .reference_list blockquote, .button, .button1, #contact-form input, #contact-form textarea, .map_box, .splash_menu > li > a, .footer .social > li > a, .tools_list a{behavior:url(js/PIE.htc);position:relative;}
+#menu > li > a strong, ul#portfolio-list li a .description, ul#portfolio-filter ul, .icons{behavior:url(js/PIE.htc);}
+#menu .port_link a:before{z-index: 999;position: absolute !important;}
